@@ -1,0 +1,46 @@
+/* リセットCSS */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* body 内の各要素を中央揃えにする */
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+/* ダイアログボックス */
+dialog {
+  background: #fef4f4; /* 桜色 */
+  border-radius: 30px;
+  width: 50vw;
+  height: 50vw;
+
+  /* 開いた際、ダイアログボックスの枠線等を消す */
+  &[open] {
+    border: none;
+    outline: none;
+  }
+
+  /* 背景色 */
+  &::backdrop {
+    background: #0d0d0dc0; /* 黒羽色 */
+    backdrop-filter: blur(4px);
+  }
+
+  /* 原画像 */
+  img {
+    /* 原画像が大きいときの為に、最大値を設定 */
+    max-width: 90%;
+    max-height: 90%;
+
+    /* 画像を中央揃え */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

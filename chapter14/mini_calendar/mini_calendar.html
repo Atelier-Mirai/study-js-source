@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mini Calendar</title>
+    <style>
+      .panel {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto;
+        width: 100px;
+        text-align: center;
+      }
+
+      .prev { grid-column: 1; grid-row: 1; }
+      .name { grid-column: 2; grid-row: 1; margin: 0; }
+      .next { grid-column: 3; grid-row: 1; }
+    </style>
+
+    <script src="mini_calendar.js" defer></script>
+  </head>
+
+  <body>
+    <div class="panel">
+      <a class="prev" title="前月">&lt;</a>
+      <p class="name" data-month="1">睦月</p>
+      <a class="next" title="翌月">&gt;</a>
+    </div>
+  </body>
+</html>

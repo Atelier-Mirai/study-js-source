@@ -1,0 +1,45 @@
+/* リセットCSS */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* body 内の各要素を中央揃えにする */
+body {
+  display: grid;
+  justify-items: center;	/* グリッドアイテム(<h1>や<a>)を水平方向で中央揃え */
+	align-items: center;		/* グリッドアイテム(<h1>や<a>)を垂直方向で中央揃え */
+  min-height: 100vh;
+}
+
+/* 全画面表示用の要素 */
+#modal {
+	display: grid;					/* グリッドレイアウトモードにする */
+  place-items: center;    /* justify-items: center; align-items: center; と同じ */
+
+  /* body内の他の要素の上に重ねて表示する */
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+
+  /* 全画面で表示する */
+	width: 100vw;
+	height: 100vh;
+
+	background: #feeeed80;	/* 背景色の設定(桜色) */
+	cursor: pointer;				/* マウスカーソルの形状は、ポインタ（指印） */
+
+	/* 原画像を表示するためのimg要素 */
+	img {
+		width: 100%;					/* 幅100% */
+		max-width: 100vw;			/* 最大幅は画面幅 */
+		height: auto;					/* 高さは画像幅に応じて自動調整 */
+	}
+}
+
+/* サムネイル画像(縮小画像)にhiddenクラスが付与されたら、非表示にする */
+.hidden {
+	display: none;
+}

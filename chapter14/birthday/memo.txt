@@ -1,0 +1,33 @@
+
+
+
+明治元年9月8日（1868年10月23日)〜明治45年7月30日（1912年7月30日）
+明治五年12月2日 1872年12月31日
+明治六年1月1日 1873年1月1日
+大正元年7月30日(1912年7月30日)-大正15年12月25日(1926年12月25日)
+昭和元年12月25日(1926年12月25日)-昭和64年1月7日(1989年1月7日)
+平成元年1月8日(1989年)-平成31年4月30日(2019)
+令和元年5月1日(2019)-
+
+ユリウス通日
+出典: フリー百科事典『ウィキペディア（Wikipedia）』
+
+
+
+グレゴリオ暦から修正ユリウス日への換算
+
+グレゴリオ暦 y 年 m 月 d 日午前0時の修正ユリウス日は次式で表される[17]。
+
+    M J D = ⌊ 365.25 y ⌋ + ⌊ y / 400 ⌋ − ⌊ y / 100 ⌋ + ⌊ 30.59 ( m − 2 ) ⌋ + d − 678   912 {\displaystyle {\mathit {MJD}}=\lfloor 365.25y\rfloor +\lfloor y/400\rfloor -\lfloor y/100\rfloor +\lfloor 30.59(m-2)\rfloor +d-678~912}
+
+    例: 2012年1月1日
+
+    y = 2011, m = 13, d = 1 より、修正ユリウス日は 55 927 である。
+
+        M J D = ⌊ 365.25 × 2011 ⌋ + ⌊ 2011 / 400 ⌋ − ⌊ 2011 / 100 ⌋ + ⌊ 30.59 ( 13 − 2 ) ⌋ + 1 − 678   912 = 55   927 {\displaystyle {\mathit {MJD}}={\lfloor 365.25\times 2011\rfloor +\lfloor 2011/400\rfloor -\lfloor 2011/100\rfloor +\lfloor 30.59(13-2)\rfloor +1-678~912}=55~927}
+
+        修正ユリウス日からグレゴリオ暦への換算
+
+    修正ユリウス日 MJD の日のグレゴリオ暦Gregorian（y 年 m 月 d 日）は次式で表される。
+
+        n = M J D + 678   881 a = 4 n + 3 + 4 ⌊ 3 4 ⌊ 4 ( n + 1 ) 146   097 + 1 ⌋ ⌋ b = 5 ⌊ a mod 1 461 4 ⌋ + 2 ( y , m , d ) = ( ⌊ a 1461 ⌋ , ⌊ b 153 ⌋ + 3 , ⌊ b mod 1 53 5 ⌋ + 1 ) {\displaystyle {\begin{aligned}n&={\mathit {MJD}}+678~881\\a&=4n+3+4\left\lfloor {\frac {3}{4}}\left\lfloor {\frac {4(n+1)}{146~097}}+1\right\rfloor \right\rfloor \\b&=5\left\lfloor {\frac {a\,{\bmod {1}}461}{4}}\right\rfloor +2\\(y,m,d)&={\bigg (}\left\lfloor {\frac {a}{1461}}\right\rfloor ,\left\lfloor {\frac {b}{153}}\right\rfloor +3,\left\lfloor {\frac {b\,{\bmod {1}}53}{5}}\right\rfloor +1{\bigg )}\end{aligned}}}

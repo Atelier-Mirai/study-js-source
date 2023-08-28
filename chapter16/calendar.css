@@ -1,0 +1,196 @@
+/* 暦 & 簡易ブログ のための CSS
+-------------------------------------------------------------------------*/
+
+/* 色
+---------------------------------------------------------------------*/
+:root {
+  --wakakusairo: #abc900;
+  --sorairo: #a0d8ef;
+  --tokiiro: #f4b3c2;
+  --botaniro: #e7609e;
+  --hinomaru: #bc012d;
+  --kinariiro: #fbfaf5;
+  --kurobeni: #302833;
+  --kurobeni_8: #30283380;
+}
+
+/* リセットCSS
+---------------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* 暦の背景写真
+---------------------------------------------------------------------*/
+#wallpaper {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows:    1fr auto 1fr;
+
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &[data-month= "1"] { background-image: url("images/snow.webp"); }
+  &[data-month= "2"] { background-image: url("images/grasslands.webp"); }
+  &[data-month= "3"] { background-image: url("images/hoursetail.webp"); }
+  &[data-month= "4"] { background-image: url("images/cherry.webp"); }
+  &[data-month= "5"] { background-image: url("images/leaves.webp"); }
+  &[data-month= "6"] { background-image: url("images/water.webp"); }
+  &[data-month= "7"] { background-image: url("images/sea.webp"); }
+  &[data-month= "8"] { background-image: url("images/sky.webp"); }
+  &[data-month= "9"] { background-image: url("images/light.webp"); }
+  &[data-month="10"] { background-image: url("images/deodora.webp"); }
+  &[data-month="11"] { background-image: url("images/maple.webp"); }
+  &[data-month="12"] { background-image: url("images/night.webp"); }
+}
+
+/* 暦
+---------------------------------------------------------------------*/
+#calendar {
+  grid-column: 2;
+  grid-row: 2;
+
+  width: clamp(375px, 100vw, 480px);
+  background: var(--kinariiro);
+  color: var(--kurobeni);
+  border-radius: 10px;
+  box-shadow: 0 20px 35px var(--kurobeni_8), 0 15px 10px var(--kurobeni_8);
+  font-family: 'Yuji Boku', serif;
+  font-size: 1.2em;
+
+  /* 月ごとの暦の写真 */
+  .photograph {
+    aspect-ratio: 16 / 9; /* 横16楯9に設定 */
+    background-position: center center;
+    background-size: cover;
+    &[data-month= "1"] { background-image: url("images/suisen.webp"); }
+    &[data-month= "2"] { background-image: url("images/nanohana.webp"); }
+    &[data-month= "3"] { background-image: url("images/momo.webp"); }
+    &[data-month= "4"] { background-image: url("images/sakura.webp"); }
+    &[data-month= "5"] { background-image: url("images/fuji.webp"); }
+    &[data-month= "6"] { background-image: url("images/ajisai.webp"); }
+    &[data-month= "7"] { background-image: url("images/hanabi.webp"); }
+    &[data-month= "8"] { background-image: url("images/himawari.webp"); }
+    &[data-month= "9"] { background-image: url("images/higanbana.webp"); }
+    &[data-month="10"] { background-image: url("images/kosumosu.webp"); }
+    &[data-month="11"] { background-image: url("images/susuki.webp"); }
+    &[data-month="12"] { background-image: url("images/tsubaki.webp"); }
+  }
+
+  /* 操作盤 */
+  .panel {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: auto;
+    text-align: center;
+    vertical-align: middle;
+    padding: 30px 30px 0px;
+    .prev  { grid-column: 1;  grid-row: 1; }
+    .year  { grid-column: 2;  grid-row: 1; }
+    .month { grid-column: 3;  grid-row: 1; }
+    .next  { grid-column: 4;  grid-row: 1; }
+    .prev,
+    .next  { color: var(--kurobeni_8); width: 2em; }
+    .prev:hover { transform: translateX(-5px); }
+    .next:hover { transform: translateX( 5px); }
+    .year,
+    .month { font-size: larger; }
+  }
+
+  /* 日付欄 */
+  & table {
+    width: 100%;
+    height: 346px;
+    padding: 20px 30px;
+    text-align: center;
+
+    & thead { color: var(--kurobeni_8); }
+    & th,
+    & td { padding-bottom: .4em; }
+
+    /* 日付のリンク */
+    & a {
+      /* 日付を円形にする */
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+
+      /* 色 */
+      color: #333;
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+      cursor: pointer;
+
+      /* カーソルを載せるとほんのり染める */
+      &:hover {
+        background: var(--botaniro);
+        color: var(--kinariiro);
+        transition: .7s;
+        transform: scale(1);
+      }
+    }
+  }
+
+  /* 色を付ける */
+  .today    > a { background: var(--botaniro); color: var(--kinariiro); }
+  .sunday   > a { background: var(--tokiiro); }
+  .saturday > a { background: var(--sorairo); }
+  .holiday  > a { background: var(--hinomaru); color: var(--kinariiro); }
+
+  /* ブログ執筆日 */
+  .blogday a {
+    outline: 6px double var(--wakakusairo); /* 若草色の輪郭線 */
+    &:hover {
+      outline-offset: 7px;  /* 少し外側に 若草色の輪郭線 */
+      outline: 6px double var(--wakakusairo);
+      transition: .7s;
+      transform: scale(1);
+    }
+  }
+
+  /* ブログの見出し */
+  .blog.header {
+    padding: 0 50px;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 3px var(--kurobeni_8), -1px -1px 1px var(--wakakusairo);
+  }
+
+  /* ブログの一覧 */
+  & nav {
+    width: calc(100% - 60px);
+    height: 170px;
+    overflow-y: scroll;   /* 縦方向にスクロール */
+    margin: 0 30px 30px 30px;
+    border: 3px double var(--wakakusairo);
+
+    /* flexbox を用いて 最新順に並べる */
+    & ul {
+      display: flex;
+      flex-direction: column-reverse;
+      list-style: none;
+      padding: 0;
+      text-align: right;
+
+      /* ブログタイトルの装飾 */
+      & li a {
+        text-decoration: none;
+        color: var(--kurobeni);
+
+        /* カーソルを載せるとほんのり染める */
+        &:hover {
+          background: var(--wakakusairo);
+          color: var(--kinariiro);
+          transition: .7s;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

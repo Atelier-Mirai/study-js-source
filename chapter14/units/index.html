@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>単位</title>
+    <!-- sakura CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+    <style>
+      [type="number"] { width: 7em; margin: 0; text-align: center; }
+      fieldset { padding: 1em; text-align: center; }
+    </style>
+    <script src="units.js" defer></script>
+  </head>
+
+  <body>
+    <h1>単位</h1>
+    <p>単位を変換します。</p>
+    <form id="form">
+      <fieldset>
+        <input  type="number" name="inch" id="inch" value="1">インチ
+        <input  type="number" name="mm"   id="mm">ミリメートル
+        <input  type="number" name="px"   id="px">ピクセル
+        <button type="button"             id="calc">変換する</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
