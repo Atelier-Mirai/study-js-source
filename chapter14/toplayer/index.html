@@ -1,3 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Top Layer</title>
+
+    <!-- スタイルシートの読み込み -->
+    <link rel="stylesheet" href="toplayer.css">
+
+    <!-- JavaScriptの読み込み -->
+    <script src="toplayer.js" defer></script>
+  </head>
+
+  <body>
+    <!-- https://developer.chrome.com/blog/what-is-the-top-layer/ -->
+    <h1>Top Layer</h1>
+
+    <!-- サムネイル画像 -->
+    <img src="sakura_thumb.webp" class="open-dialog">
+
+    <!-- 原画像 -->
+    <dialog>
+      <img src="sakura.webp" class="close-dialog">
+    </dialog>
+
+    <pre>
+      <code>
 /*=====================================================================
   index.htmlから読み込むようにする他
   ブラウザの開発者ツールを開き
@@ -26,3 +53,7 @@ THUMBNAIL_IMAGE.addEventListener("click", OPEN_DIALOG)
 // 原画像にイベントリスナを設定、
 // クリックされたらCLOSE_DIALOG関数が呼ばれ、実行される
 ORIGINAL_IMAGE.addEventListener("click", CLOSE_DIALOG)
+      </code>
+    </pre>
+  </body>
+</html>

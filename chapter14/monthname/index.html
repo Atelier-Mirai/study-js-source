@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>和風月名</title>
+
+    <!-- sakura CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+
+    <!-- JavaScriptの読み込み -->
+    <script src="monthname.js" defer></script>
+  </head>
+
+  <body>
+    <h1>和風月名</h1>
+
+    <button id="next">翌月</button>
+
+    <pre>
+      <code>
 /*=====================================================================
   index.htmlから読み込むようにする他
   ブラウザの開発者ツールを開き
@@ -37,3 +57,8 @@ const nextMonth = () => {
 // イベントリスナーの登録
 // next が click されると nextMonth が実行される
 next.addEventListener("click", nextMonth)
+
+      </code>
+    </pre>
+  </body>
+</html>

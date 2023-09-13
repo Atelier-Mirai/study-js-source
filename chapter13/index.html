@@ -1,10 +1,24 @@
-/*=====================================================================
-  index.htmlから読み込むようにする他
-  ブラウザの開発者ツールを開き
-  必要箇所を コンソール画面に貼り付けるなどして
-  ご活用下さい
-=====================================================================*/
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>挨拶</title>
 
+		<!-- sakura CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+
+    <!-- JavaScriptの読み込み -->
+		<script src="greeting.js" defer></script>
+	</head>
+
+	<body>
+		<h1>挨拶</h1>
+
+    <!-- 挨拶ボタン -->
+    <button type="button" id="greeting">挨拶</button>
+
+		<pre>
+			<code>
 // HTML中の挨拶ボタン要素を取得
 const GREETING_BUTTON = document.getElementById("greeting")
 
@@ -24,3 +38,7 @@ const GREETING = () => {
 // 挨拶ボタンにイベントリスナを設定、
 // クリックされたらGREETING関数が呼ばれ、実行される
 GREETING_BUTTON.addEventListener("click", GREETING)
+			</code>
+		</pre>
+	</body>
+</html>

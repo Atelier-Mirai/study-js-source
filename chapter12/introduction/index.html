@@ -2,13 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>JavaScript練習</title>
+    <title>DOM(HTML操作)</title>
+
+    <!-- sakura CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
 
     <!-- JavaScriptの読み込み -->
     <script src="introduction.js" defer></script>
   </head>
 
   <body>
-    <h1>JavaScript練習</h1>
+    <h1>DOM(HTML操作)</h1>
+
+    <pre>
+      <code>
+        /*=====================================================================
+          index.htmlから読み込むようにする他
+          ブラウザの開発者ツールを開き
+          必要箇所を コンソール画面に貼り付けるなどして
+          ご活用下さい
+        =====================================================================*/
+
+        // (1) CSSセレクタを使い、DOMツリーから操作したいh1要素を取得する
+        const element = document.querySelector("h1")
+
+        // (2) 取得したh1要素の内容物（コンテンツ、JavaScript練習）を取得する
+        const content = element.textContent
+
+        // (3)取得した内容物(コンテンツ)「JavaScript練習」を表示する。
+        alert(content)
+      </code>
+    </pre>
   </body>
 </html>
